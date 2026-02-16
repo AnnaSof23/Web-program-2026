@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Даний радіус кола r . Скласти програму знаходження довжини кола та площу кола.</h3>
+    r: <input type="text" id="r"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let r = parseInt(document.getElementById("r").value);
+            let res = document.getElementById("result");
+            let length = 2 * Math.PI * r;
+            let area = (Math.PI * r * r);
+
+            res.innerHTML =
+                "Довжина = " + length + "<br>" + "Площа = " + area;
+        }
+    </script>
+</body>
+
+</html>

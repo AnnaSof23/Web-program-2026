@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Змінна х отримує тризначне число. Скласти програму, яка помістить у змінну добуток цифр цього числа.</h3>
+    Введіть число : <input type="text" id="x"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let x = parseInt(document.getElementById("x").value);
+            let res = document.getElementById("result");
+
+            let last = (x / 1) % 10;
+            let middle = Math.floor(x / 10) % 10;
+            let first = Math.floor(x / 100) % 10;
+
+            let product = last * middle * first;
+
+            res.innerHTML = product;
+        }
+    </script>
+</body>
+
+</html>

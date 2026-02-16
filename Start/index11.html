@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Скласти програму обчислення суми модулів трьох дійсних чисел .</h3>
+    a: <input type="text" id="a"><br>
+    b: <input type="text" id="b"><br>
+    c: <input type="text" id="c"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = parseInt(document.getElementById("c").value);
+            let res = document.getElementById("result");
+            let sum = Math.abs(a) + Math.abs(b) + Math.abs(c);
+            res.innerHTML = sum;
+        }
+    </script>
+</body>
+
+</html>

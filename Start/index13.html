@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Скласти програму, яка отримує трьохзначне число і повертає :
+        суму останньої та передостанньої цифр,
+        суму останньої та першої цифр.</h3>
+    Введіть число : <input type="text" id="n"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let n = parseInt(document.getElementById("n").value);
+            let res = document.getElementById("result");
+            let last = (n / 1) % 10;
+            let middle = Math.floor(n / 10) % 10;
+            let first = Math.floor(n / 100) % 10;
+
+            let SumA = last + middle;
+            let SumB = last + first;
+
+            res.innerHTML =
+                "a) " + SumA + "<br>" + "b) " + SumB;
+        }
+    </script>
+</body>
+
+</html>

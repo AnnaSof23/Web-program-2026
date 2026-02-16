@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>header 1</h1>
+    a: <input type="text" id="a" value=1><br>
+    b: <input type="text" id="b" value=2><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let res = document.getElementById("result");
+            let square = (a * b) / 2;
+            let hyp = Math.sqrt(a * a + b * b)
+
+            res.innerHTML =
+                "Площа = " + square
+            "Гіпотенуза = " + hyp;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Скласти програму визначення кута в градусах між положенням годинникової стрілки на початку доби та її положенням
+        в
+        годинах h хвилин s секунд
+    </h3>
+    h: <input type="text" id="h"><br>
+    m: <input type="text" id="m"><br>
+    s: <input type="text" id="s"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let h = parseInt(document.getElementById("h").value);
+            let m = parseInt(document.getElementById("m").value);
+            let s = parseInt(document.getElementById("s").value);
+            let res = document.getElementById("result");
+
+            let angle = 30 * (h % 12) + 0.5 * m + s / 120;
+
+            res.innerHTML = angle + "°";
+        }
+    </script>
+</body>
+
+</html>

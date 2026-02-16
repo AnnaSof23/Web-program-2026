@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="a">
+    <button id="btn">Check</button>
+    <p id="res">Result</p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let a_inpt = document.getElementById("a");
+            let p = document.getElementById("res");
+            let a = parseInt(a_inpt.value);
+
+            if ((a % 2 == 0) && (a >= 10) && (a < 100)) {
+                p.innerHTML = "a - парне двоцифрове число";
+            } else {
+                p.innerHTML = "a - не парне двоцифрове число";
+            }
+            console.log(a);
+        }
+    </script>
+</body>
+
+</html>

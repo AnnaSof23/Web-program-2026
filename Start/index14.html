@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Скласти програму, яка переводить час із секунд, визначаючи повну кількість годин хвилин і секунд</h3>
+    Введіть кількість секунд : <input type="text" id="t"><br>
+    <button id="btn">Send</button>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+        function fnc() {
+            let t = parseInt(document.getElementById("t").value);
+            let res = document.getElementById("result");
+
+            let h = Math.floor(t / 3600);
+            let min = Math.floor(t % 3600) / 60;
+            let sec = t % 60;
+
+            res.innerHTML =
+                "Години = " + h + "<br>" + "Хвилини = " + min + "<br>" + "Секунди =" + sec;
+        }
+    </script>
+</body>
+
+</html>
