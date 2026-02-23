@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="k" placeholder="Введіть k">
+    <input type="text" id="l" placeholder="Введіть l">
+    <button id="btn">Обчислити</button>
+    <p id="res">Result</p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let k = parseInt(document.getElementById("k").value);
+            let l = parseInt(document.getElementById("l").value);
+            let p = document.getElementById("res");
+
+            if (k !== l) {
+                if (k < l) {
+                    k = l;
+                } else {
+                    l = k;
+                }
+            } else {
+                k = 0;
+                l = 0;
+            }
+
+
+
+            p.innerHTML = "k = " + k + ", l = " + l;
+        }
+
+    </script>
+</body>
+
+</html>

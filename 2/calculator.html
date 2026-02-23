@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic calculator</title>
+</head>
+
+<body>
+    <h2>Калькулятор: виручка, прибуток, рентабельність</h2>
+
+    <input type="text" id="price" placeholder="Ціна за одиницю"><br>
+    <input type="text" id="number" placeholder="Кількість"><br>
+    <input type="text" id="costs" placeholder="Загальні витрати"><br>
+    <button id="btn">Розрахувати</button>
+
+    <p id="res"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", calc);
+
+        function calc() {
+            let price = Number(document.getElementById("price").value)
+            let number = Number(document.getElementById("number").value)
+            let costs = Number(document.getElementById("costs").value)
+            let p = document.getElementById("res")
+
+            if (price <= 0 || number <= 0 || costs <= 0) {
+                p.innerHTML = "Введіть коректні числа!";
+                return;
+            }
+
+            let revenue = price * number;
+            let profit = revenue - costs;
+            let profitability = (profit / revenue) * 100;
+
+            p.innerHTML = "Виручка: " + revenue + "<br>" +
+                "Прибуток: " + profit + "<br>" + "Рентабельність: " + profitability + "%";
+
+
+        }
+
+    </script>
+</body>
+
+</html>

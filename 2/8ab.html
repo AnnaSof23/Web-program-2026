@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="a" placeholder="Введіть число a">
+    <button id="btn">Перевірити</button>
+    <p id="res"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let a = Number(document.getElementById("a").value);
+            let p = document.getElementById("res");
+
+            let result = "";
+
+            // a
+            if ((a >= 4) && (a <= 6)) {
+                result += "a належить [4;6]<br>";
+            } else {
+                result += "a не належить [4;6]<br>";
+            }
+
+            // b
+            if ((a >= -2) && (a <= 3)) {
+                result += "a належить [-2;3]<br>";
+            } else {
+                result += "a не належить [-2;3]<br>";
+            }
+
+
+            p.innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

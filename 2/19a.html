@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="x" placeholder="Введіть x">
+    <input type="text" id="y" placeholder="Введіть y">
+    <button id="btn">Знайти</button>
+    <p id="res">Result</p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let x = parseInt(document.getElementById("x").value);
+            let y = parseInt(document.getElementById("y").value);
+            let p = document.getElementById("res");
+
+            let t = (x >= 0 && x <= 17) && (y >= 0 && y <= 10);
+
+            if (t) {
+                p.innerHTML = "Точка належит заштрихованій області";
+            } else {
+                p.innerHTML = "Точка не належит заштрихованій області";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

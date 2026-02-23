@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="x" placeholder="Введіть x">
+    <button id="btn">Знайти</button>
+    <p id="res">Result</p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let x = parseInt(document.getElementById("x").value);
+            let p = document.getElementById("res");
+
+            if ((x >= -5 && x <= -4) && (x > 0 && x <= 2) && (x >= 3, 2 && x <= 7)) {
+                p.innerHTML = "x належить";
+            } else {
+                p.innerHTML = "x не 'належить";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

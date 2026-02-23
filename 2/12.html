@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="x" placeholder="Введіть x">
+    <input type="text" id="y" placeholder="Введіть y">
+    <input type="text" id="z" placeholder="Введіть z">
+    <input type="text" id="a" placeholder="Введіть сторону отвору a">
+    <button id="btn">Знайти</button>
+    <p id="res">Result</p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let x = parseInt(document.getElementById("x").value);
+            let y = parseInt(document.getElementById("y").value);
+            let z = parseInt(document.getElementById("z").value);
+            let a = parseInt(document.getElementById("a").value);
+            let p = document.getElementById("res");
+
+
+            if ((x <= a && y <= a) ||
+                (x <= a && z <= a) ||
+                (y <= a && z <= a)) {
+                p.innerHTML = "Цегла пройде через отвір";
+            } else {
+                p.innerHTML = "Цегла не пройде через отвір";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

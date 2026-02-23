@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 7</title>
+</head>
+
+<body>
+
+    <input type="text" id="a" placeholder="Введіть число a">
+    <button id="btn">Перевірити</button>
+    <p id="res"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", fnc);
+
+        function fnc() {
+            let a = Number(document.getElementById("a").value);
+            let p = document.getElementById("res");
+
+            let result = "";
+
+            // 7a
+            if ((a % 2 === 0) && (a % 3 === 0)) {
+                result += "a кратне 2 та 3<br>";
+            } else {
+                result += "a не кратне 2 та 3<br>";
+            }
+
+            // 7b
+            if ((a % 2 === 0) && (a % 5 === 0)) {
+                result += "a кратне 2 і 5<br>";
+            } else {
+                result += "a не кратне 2 і 5<br>";
+            }
+
+            // 7c
+            if ((a <= 0) || (a >= 3)) {
+                result += "a не належить (0;3)<br>";
+            } else {
+                result += "a належить (0;3)<br>";
+            }
+
+            // 7d
+            if ((a >= -2) && (a <= 0)) {
+                result += "a належить [-2;0]<br>";
+            } else {
+                result += "a не належить [-2;0]<br>";
+            }
+
+
+            p.innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>
