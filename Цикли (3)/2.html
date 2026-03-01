@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h3>Дані a, b (a > 1). Дані а, b , (а> 1). Скласти програму пошуку всіх ступенів числа а менших b.
+    </h3>
+    <div id="field"></div>
+
+    <script>
+        let field = document.getElementById("field");
+
+        let a = 2;
+        let b = 100;
+        for (let k = 0; Math.pow(a, k) < b; k++) {
+
+            let value = Math.pow(a, k);
+
+            let el = document.createElement("span");
+            el.classList.add("space");
+
+            el.innerHTML = a + "<sup>" + k + "</sup> = " + value;
+
+            field.appendChild(el);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h3>Відома маса кожного із 12 предметів. Скласти програму визначення маси найважчого предмета.
+    </h3>
+
+    <div id="field"></div>
+
+    <script>
+        let field = document.getElementById("field");
+        let maxWeight = -Infinity
+
+        for (let i = 1; i <= 12; i++) {
+
+            let weight = Number(prompt("Введіть масу предмета №" + i + ":"));
+
+            let el = document.createElement("span");
+            el.classList.add("space");
+            el.innerHTML = weight;
+            field.appendChild(el);
+
+            if (weight > maxWeight) {
+                maxWeight = weight;
+            }
+
+        }
+
+        let res = document.createElement("p");
+        res.innerHTML = "Найважчий предмет має масу: " + maxWeight;
+        field.appendChild(res);
+
+    </script>
+
+</body>
+
+</html>

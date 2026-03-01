@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Скласти програму обчислення суми квадратів перших п натуральних чисел, кожне з яких при діленні на т дає в
+        залишку q
+    </h3>
+    <div id="field"></div>
+    <script>
+        let field = document.getElementById("field");
+        let sum = 0;
+        let n = 20;
+        let m = 3;
+        let q = 1;
+
+        for (let i = 1; i <= n; i++) {
+            let el = document.createElement("span");
+            el.classList = "space";
+
+            if (i % m == q) {
+                sum += i * i;
+                el.classList.add("highlight");
+            }
+            el.innerHTML = i;
+            field.appendChild(el)
+
+        }
+
+        let res = document.createElement("p")
+        res.innerHTML = "Сума = " + sum;
+        field.appendChild(res);
+    </script>
+</body>
+
+</html>

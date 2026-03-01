@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Скласти програму обчислення суми перших непарних чисел від 0 до n</h3>
+    <div id="field"></div>
+    <script>
+        let field = document.getElementById("field");
+        let sum = 0;
+        let n = 10;
+
+        for (let i = 0; i <= n; i++) {
+
+            let el = document.createElement("span");
+            el.classList = "space";
+
+            if (i % 2 != 0) {
+                sum += i;
+                el.classList.add("highlight");
+            }
+
+            el.innerHTML = i;
+            field.appendChild(el)
+        }
+
+        let res = document.createElement("p")
+        res.innerHTML = "Сума = " + sum;
+        field.appendChild(res);
+    </script>
+</body>
+
+</html>

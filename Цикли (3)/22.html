@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 22</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h3>Скласти програму визначення найменшої кількості доданків + Сума яких перевищує задане число z.
+    </h3>
+    <div id="field"></div>
+
+    <script>
+        let field = document.getElementById("field");
+
+        let z = Number(prompt("Введіть число z:"));
+
+        let sum = 0;
+        let count = 0;
+
+        for (let i = 1; sum <= z; i++) {
+
+            let square = i * i;
+            sum += square;
+            count++;
+
+            let el = document.createElement("span");
+            el.classList.add("space");
+            el.innerHTML = i + "²";
+            field.appendChild(el);
+        }
+
+        let res = document.createElement("p");
+        res.classList.add("result");
+        res.innerHTML =
+            "Кількість доданків = " + count +
+            " Сума = " + sum;
+
+        field.appendChild(res);
+    </script>
+
+</body>
+
+</html>

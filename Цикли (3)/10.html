@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h3>Введіть послідовність цілих чисел, поки вони парні. Скласти програму пошуку їхнього середнього арифметичного.
+    </h3>
+    <div id="field"></div>
+
+    <script>
+        let field = document.getElementById("field");
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; ; i++) {
+
+            let input = prompt("Введіть ціле число:");
+            if (input === null) break;
+            let num = Number(input);
+            if (num % 2 !== 0) break;
+
+            sum += num;
+            count++;
+            let el = document.createElement("span");
+            el.classList.add("space");
+            el.innerHTML = num;
+            field.appendChild(el);
+        }
+
+        let res = document.createElement("p");
+        if (count > 0) {
+            let avr = sum / count;
+            res.innerHTML = "Середне = " + avr;
+        } else {
+            res.innerHTML = "Парних чисел не було";
+        }
+        field.appendChild(res);
+
+    </script>
+
+</body>
+
+</html>

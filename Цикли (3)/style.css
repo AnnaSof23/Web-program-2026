@@ -1,0 +1,8 @@
+.space {
+    padding: 5px 8px;
+    display: inline-block;
+}
+
+.highlight {
+    background-color: palevioletred;
+}
