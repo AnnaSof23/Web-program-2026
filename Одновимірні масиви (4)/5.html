@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Масив із 12 дійсних чисел заданий випадковим чином. Знайти суму негативних чисел.</h3>
+    <p id="arr_out"></p>
+
+    <p id="result"></p>
+    <script>
+        let arr_out = document.getElementById("arr_out");
+        let result = document.getElementById("result");
+        let arr = [];
+        let str_out = "<b>Досліджуваний масив:</b> ";
+        for (let i = 0; i < 12; i += 1) {
+            arr.push(Math.floor(Math.random() * 200 - 100));
+            str_out += arr[i] + " "
+        }
+        console.log(arr);
+        arr_out.innerHTML = str_out;
+
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                sum += arr[i];
+            }
+        }
+        result.innerHTML = "Cумa негативних чисел = " + sum;
+    </script>
+</body>
+
+</html>
